@@ -1,6 +1,6 @@
 # AMD AMF Encoding test
 
-Encoding test for OBS
+Encoding test for OBS (https://obsproject.com/)
 
 Encoders tested: 
 1. x264 (for baseline)
