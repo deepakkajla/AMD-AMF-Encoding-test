@@ -1,4 +1,4 @@
-# AMD-AMF-Encoding-test
+# AMD AMF Encoding test
 
 Encoding test for OBS
 
