@@ -19,4 +19,11 @@ Testing method:
 
 Video files for the test: TODO
 
-Results - FFMetrics.Results.csv
+Detailed Results - Results.csv
+
+Due to limited performance of my CPU i5 10400, I could not encode on x264 above veryfast at any usable bitrate.
+
+Conclusion:
+
+For 1440p60 stream at 13k bitrate the encoders are ranked as follows
+x264 > AMF AVC GPU > H264/AVC Encoder (AMD Advanced Media Framework) > AMD AMF H.264/AVC (via FFmpeg)
