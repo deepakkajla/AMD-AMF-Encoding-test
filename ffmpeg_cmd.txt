@@ -1,17 +1,8 @@
+#Extract start frame
 ffmpeg -i "lossless 2560x1440.avi" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:00:02 -frames:v 60 -vsync 0 lossless-%03d-start.png
 
+#Extract end frame
 ffmpeg -i "lossless 2560x1440.avi" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:02:09 -frames:v 60 -vsync 0 lossless-%03d-end.png
 
-ffmpeg -i "amfavc.mp4" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:00:00 -frames:v 60 -vsync 0 amfavc-%03d-start.png
-
-ffmpeg -i "amfavc.mp4" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:02:07 -frames:v 60 -vsync 0 amfavc-%03d-end.png
-
-ffmpeg -i "defaultavc.mp4" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:00:00 -frames:v 60 -vsync 0 defaultavc-%03d-start.png
-
-ffmpeg -i "defaultavc.mp4" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:02:07 -frames:v 60 -vsync 0 defaultavc-%03d-end.png
-
-ffmpeg -i "cpuveryfastcfr24.mp4" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:00:01 -frames:v 60 -vsync 0 cpuveryfastcfr24-%03d-start.png
-
-ffmpeg -i "cpuveryfastcfr24.mp4" -vf "drawtext=fontfile=/usr/share/fonts/TTF/Vera.ttf: text='%{pts\:hms}': x=(w-tw)/2: y=h-(2*lh): fontcolor=white: box=1: boxcolor=0x00000000@1" -ss 00:02:08 -frames:v 60 -vsync 0 cpuveryfastcfr24-%03d-end.png
-
-ffmpeg -i "cpuveryfastcfr24.mp4" -ss 00:00:02.317 -to 00:02:09.333 -c:v copy -c:a copy cpuveryfastcfr24_trim.mp4
+#Trim file using start and end frame times without reencoding
+ffmpeg -i "lossless 2560x1440.avi" -ss 00:00:02.317 -to 00:02:09.333 -c:v copy -c:a copy "lossless 2560x1440 trim.avi"
