@@ -9,7 +9,7 @@ Encoders tested:
 4. AMD AMF H.264/AVC (via FFmpeg) (included with https://github.com/Xaymar/obs-StreamFX/releases, v0.11.1)
 
 Testing method:
-1. Recorded lossless 2560x1440 60fps gameplay footage using OBS - reference file for test
+1. Recorded lossless 2560x1440 60fps gameplay footage using OBS - reference file for test: https://mega.nz/file/ppgSgbwL#XnR1wJn9HrP0txM2dZ-wSToXj0xnMVErjT4MzjqbjO0
 2. Set the lossless reference file as a VLC media source in a new OBS scene
 3. Set output as 2560x1440 60fps (no scaling)
 4. Target bitrate as 13k - I want to test
@@ -17,7 +17,7 @@ Testing method:
 6. Trimmed footage to have same start and end frames
 7. Compared with FFmetrics GUI (https://github.com/fifonik/FFMetrics/releases, v1.0.0)
 
-Video files for the test: TODO
+Video files for the test: https://mega.nz/folder/Q54mWRiA#n6Vu73ojvdj7t-y9lPcZzg
 
 Detailed Results - Results.csv
 
